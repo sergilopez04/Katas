@@ -1,19 +1,26 @@
 <?php
 
-
-function highlightText(string $input){
-    $previousCounterLetter = 0;
-    $datas = preg_split('/\s+/', $input);
-    echo implode(PHP_EOL, $datas);
+function highlightText(string $input) {
+    $words = preg_split('/\s+/', $input);
     
-    foreach ($datas as $data){
-        $counterLetter = strlen($data);
-        $previousCounterLetter = ($previousCounterLetter < $counterLetter) ? $previousCounterLetter = $counterLetter: $previousCounterLetter ;
-        
-        
+    $maxLength = 0;
+    foreach ($words as $word) {
+        $wordLength = strlen($word);
+        if ($wordLength > $maxLength) {
+            $maxLength = $wordLength;
+        }
     }
-
-    highlightText("hola, qué tal?");
+    
+    $frameWidth = $maxLength + 4; 
+    echo str_repeat('#', $frameWidth) . PHP_EOL;
+    
+    foreach ($words as $word) {
+        echo '# ' . str_pad($word, $maxLength) . ' #' . PHP_EOL;
+    }
+    
+    echo str_repeat('#', $frameWidth) . PHP_EOL;
 }
+
+highlightText("Has debugado ya?");
 
 ?>
