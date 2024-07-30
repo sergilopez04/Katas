@@ -3,10 +3,10 @@ class PlansVacacionals {
     private string $llocActivitat;
     private DateTime $data;
     private string $nom;
-    private PlanVacacionalType $tipus;
+    private PlansVacacionalsType $tipus;
 
 
-    public function __construct(string $llocActivitat, string $data, string $nom, string $tipus) {
+    public function __construct(string $llocActivitat, string $data, string $nom, PlansVacacionalsType $tipus) {
         $this->llocActivitat = $llocActivitat;
         $this->data = new DateTime($data);
         $this->nom = $nom;

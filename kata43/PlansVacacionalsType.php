@@ -1,6 +1,6 @@
 <?php
 
-enum PlanVacacionalType: string {
+enum PlansVacacionalsType: string {
     case RESTAURANT = 'Restaurant';
     case ESPORT = 'Esport';
     case CULTURAL = 'Cultural';
